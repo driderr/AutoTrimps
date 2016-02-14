@@ -120,6 +120,11 @@ function autoPlusSettingsMenu() {
     toggleSettingsMenu();
 }
 
+function SetTooltipForButton(btn, name, description) {
+    btn.setAttribute("onmouseover", 'game.global.lockTooltip = true;tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\");');
+    btn.setAttribute("onmouseout", 'game.global.lockTooltip = false;tooltip("hide")');
+}
+
 function createSetting(id, name, description, type, defaultValue, list) {
     var btnParent = document.createElement("DIV");
     btnParent.setAttribute('class', 'optionContainer');
@@ -137,8 +142,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
         }
         btn.setAttribute('class', 'settingBtn settingBtn' + autoTrimpSettings[id].enabled);
         btn.setAttribute("onclick", 'settingChanged("' + id + '")');
-        btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\")');
-        btn.setAttribute("onmouseout", 'tooltip("hide")');
+        SetTooltipForButton(btn, name, description);
         btn.textContent = name;
         btnParent.appendChild(btn)
         document.getElementById("autoSettings").appendChild(btnParent);
@@ -154,8 +158,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
         }
         btn.setAttribute('class', 'noselect settingBtn btn-info');
         btn.setAttribute("onclick", 'autoSetValueToolTip("' + id + '", "' + name + '")');
-        btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\")');
-        btn.setAttribute("onmouseout", 'tooltip("hide")');
+        SetTooltipForButton(btn, name, description);
         btn.textContent = name;
         btnParent.appendChild(btn)
         document.getElementById("autoSettings").appendChild(btnParent);
@@ -174,8 +177,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
         btn.id = id;
         btn.setAttribute("style", "color:black");
         btn.setAttribute("class", "settingBtn");
-        btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\")');
-        btn.setAttribute("onmouseout", 'tooltip("hide")');
+        SetTooltipForButton(btn, name, description);
         btn.setAttribute("onchange", 'settingChanged("' + id + '")');
 
         for (var item in list) {
