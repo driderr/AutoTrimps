@@ -20,7 +20,7 @@ createSetting('CheapEquipmentRatio', 'Cheap Equipment Ratio', '0.01 means buy eq
 createSetting('CheapEqUpgradeRatio', 'Cheap Eq Upgrades Ratio', '0.2 means buy equipment upgrades if it only costs 20% of resources, regardless of any other limits', 'value', 0.2);
 createSetting('skipShieldBlock', 'Skip Shield Block', 'Will skip the shield block upgrade', 'boolean', true);
 createSetting('minBreedingSpeed', 'Min Breeding Speed', 'Open traps if breeding speed is lower than this, in trimps/second', 'value', 100);
-createSetting('runBionicWonderland', 'Skip Shield Block', 'Enable to run Bionic Wonderland as soon as it\'s available(for speed achievement)', 'boolean', false);
+createSetting('runBionicWonderland', 'Run Bionic W.', 'Enable to run Bionic Wonderland as soon as it\'s available(for speed achievement)', 'boolean', false);
 createSetting('shouldMaxOutToxicityHelium', 'Max Toxic Stacks', 'Max out toxicity stacks for maximum helium for bone trader during toxicity challenge', 'boolean', false);
 createSetting('zoneToStartMaxingAt', 'Max-Out Toxic Zone Start', 'Zone to begin maxing toxicity stacks for maximum helium', 'value', 50);
 saveSettings();
@@ -36,7 +36,7 @@ function automationMenuInit() {
     }
     //create the button Automation button
     var newItem = document.createElement("TD");
-    newItem.appendChild(document.createTextNode("Automation"));
+    newItem.appendChild(document.createTextNode("Trimpz"));
     newItem.setAttribute("class", "btn btn-default");
     newItem.setAttribute("onclick", "autoToggle()");
     var settingbarRow = document.getElementById("settingsTable").firstElementChild.firstElementChild;
@@ -160,7 +160,7 @@ function autoSetValueToolTip(id, text) {
     var elem = document.getElementById("tooltipDiv");
     var tooltipText = 'Type a number below. You can also use shorthand such as 2e5 or 200k. Put -1 for Infinite.';
     tooltipText += '<br/><br/><input id="customNumberBox" style="width: 50%" onkeypress="onKeyPressSetting(event, \'' + id + '\')" value=' + trimpzSettings[id].value + '></input>';
-    var costText = '<div class="maxCenter"><div class="btn btn-info" onclick="autoSetValue(\'' + id + '\')">Apply</div><div class="btn btn-info" onclick="cancelTooltip()">Cancel</div></div>';
+    var costText = '<div class="maxCenter"><div class="btn btn-info" onclick="autoSetValue(\'' + id + '\')">Apply</div><div class="btn btn-info" onclick="enteringValue = false;cancelTooltip();">Cancel</div></div>';
     game.global.lockTooltip = true;
     elem.style.left = '32.5%';
     elem.style.top = '25%';
