@@ -56,8 +56,6 @@ createSetting('HeliumHourChallenge', 'Challenge for Helium per Hour', 'Automatic
 createSetting('CustomAutoPortal', 'Custom Portal', 'Automatically portal after clearing this level', 'value', '20');
 
 
-
-
 function automationMenuInit() {
 
     var settingBtnSrch = document.getElementsByClassName("btn btn-default");
@@ -98,18 +96,28 @@ function automationMenuInit() {
 
     //create the space to place the automation settings.
     document.getElementById("settingsRow").innerHTML += '<div id="autoSettings" style="display: none;margin-bottom: 2vw;margin-top: 2vw;"></div>';
-    //Scripts to be injected. elements can't call tampermonkey scripts for some reason.(assume it's the same for grease)
-    var script = document.createElement('script');
-    //array to hold the settings. Loading values into them should be done before UI creation.
-    var html = "var automationSettings=[0,0,0];\r\n var ranstring=''; //cause I'm dumb \r\n";
-    //toggles the display of the settings menu.
-    html += "function autoToggle()\r\n {if (game.options.displayed)\r\n toggleSettingsMenu();\r\n if (document.getElementById('graphParent').style.display === 'block')\r\n document.getElementById('graphParent').style.display = 'none';\r\n var item = document.getElementById('autoSettings');\r\n if(item.style.display === 'block')\r\n item.style.display='none';\r\n else item.style.display = 'block'; }\r\n ";
-    //overloads the settings menu button to include hiding the auto menu settings.
-    html += "function autoPlusSettingsMenu(){\r\n var item = document.getElementById('autoSettings');\r\n if(item.style.display === 'block')\r\n item.style.display='none';\r\n toggleSettingsMenu();}\r\n ";
+}
 
-    script.innerHTML = html;
-    //inject the scripts
-    document.body.appendChild(script);
+var ranstring='';
+
+//toggles the display of the settings menu.
+function autoToggle() {
+    if (game.options.displayed)
+        toggleSettingsMenu();
+    if (document.getElementById('graphParent').style.display === 'block')
+        document.getElementById('graphParent').style.display = 'none';
+    var item = document.getElementById('autoSettings');
+    if (item.style.display === 'block')
+        item.style.display = 'none';
+    else item.style.display = 'block';
+}
+
+//overloads the settings menu button to include hiding the auto menu settings.
+function autoPlusSettingsMenu() {
+    var item = document.getElementById('autoSettings');
+    if (item.style.display === 'block')
+        item.style.display = 'none';
+    toggleSettingsMenu();
 }
 
 function createSetting(id, name, description, type, defaultValue, list) {
@@ -189,11 +197,9 @@ function settingChanged(id) {
         updateCustomButtons();
     }
     if (autoTrimpSettings[id].type == 'dropdown') {
-    	autoTrimpSettings[id].selected = document.getElementById(id).value;
+        autoTrimpSettings[id].selected = document.getElementById(id).value;
     }
 }
-
-
 
 
 function autoSetValueToolTip(id, text) {
@@ -266,11 +272,11 @@ function updateValueFields() {
 
 function updateCustomButtons() {
     //automaps button
-    
+
     if (autoTrimpSettings.RunMapsWhenStuck.enabled) document.getElementById("autoMapBtn").setAttribute("class", "btn fightBtn btn-success");
     else document.getElementById("autoMapBtn").setAttribute("class", "btn fightBtn btn-danger");
     //auto portal setting, hide until player has cleared zone 81
-    if (game.global.highestLevelCleared >= 80 ) document.getElementById("AutoPortal").style.display = '';
+    if (game.global.highestLevelCleared >= 80) document.getElementById("AutoPortal").style.display = '';
     else document.getElementById("AutoPortal").style.display = 'none';
     //custom auto portal value
     if (autoTrimpSettings.AutoPortal.selected == "Custom") document.getElementById("CustomAutoPortal").style.display = '';
