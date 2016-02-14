@@ -99,6 +99,7 @@ function automationMenuInit() {
 }
 
 var ranstring='';
+var enteringValue = false;
 
 //toggles the display of the settings menu.
 function autoToggle() {
@@ -122,7 +123,7 @@ function autoPlusSettingsMenu() {
 
 function SetTooltipForButton(btn, name, description) {
     btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\");game.global.lockTooltip = true;');
-    btn.setAttribute("onmouseout", 'game.global.lockTooltip = false;tooltip("hide")');
+    btn.setAttribute("onmouseout", 'if(!enteringValue) game.global.lockTooltip = false; tooltip("hide")');
 }
 
 function createSetting(id, name, description, type, defaultValue, list) {
@@ -205,6 +206,7 @@ function settingChanged(id) {
 
 
 function autoSetValueToolTip(id, text) {
+    enteringValue = true;
     ranstring = text;
     var elem = document.getElementById("tooltipDiv");
     var tooltipText = 'Type a number below. You can also use shorthand such as 2e5 or 200k. Put -1 for Infinite.';
@@ -257,10 +259,14 @@ function autoSetValue(id) {
             }
             if (!base) num = parseFloat(num);
         }
-    } else return;
+    } else{
+        enteringValue = false;
+        return;
+    }
     var txtNum = (num > -1) ? prettify(num) : 'Infinite';
     autoTrimpSettings[id].value = num;
     document.getElementById(id).textContent = ranstring + ': ' + txtNum;
+    enteringValue = false;
 }
 
 function updateValueFields() {
