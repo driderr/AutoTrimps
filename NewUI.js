@@ -1,13 +1,14 @@
+//Thank you goes to AutoTrimps, Ishakaru, Zininzinin, and spindrjr for the original edition of this UI and settings scheme!
+
 if (trimpzSettings === undefined) {
-    console.log('Huh, trimpzSettings was undefined in the UI script...')
-    var trimpzSettings = new Object();
+    var trimpzSettings = {};
 }
 
 
 automationMenuInit();
 
 createSetting('portalAt', 'Portal Zone', 'Portal when this zone is reached', 'value', 146);
-createSetting('challenge', 'Challenge', 'Challenge to run on portal', 'dropdown', 'Nom', ['Electricity', 'Crushed', 'Nom', 'Toxicity']);
+createSetting('challenge', 'Challenge', 'Challenge to run on portal', 'dropdown', 'Nom', ['None', 'Electricity', 'Crushed', 'Nom', 'Toxicity']);
 createSetting('minimumUpgradesOnHand', 'Eq Upgrades on Hand', '0 will not run maps for equipment upgrades, 4 will run maps to keep 4 available equipment upgrades that will be autopurchased eventually', 'value', 4);
 createSetting('doRunMapsForBonus', 'Map Bonus Runs', 'Enable running of maps to increase map bonus, based on difficulty of boss fight', 'boolean', true);
 createSetting('doRunMapsForEquipment', 'Loot Runs', 'Enable running of maps for loot if needed for boss fight, requires Map Bonus Runs to be on', 'boolean', true);
@@ -94,7 +95,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
         btn.setAttribute("onclick", 'settingChanged("' + id + '")');
         SetTooltipForButton(btn, name, description);
         btn.textContent = name;
-        btnParent.appendChild(btn)
+        btnParent.appendChild(btn);
         document.getElementById("autoSettings").appendChild(btnParent);
     } else if (type == 'value') {
         if (trimpzSettings[id] === undefined) {
@@ -110,7 +111,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
         btn.setAttribute("onclick", 'autoSetValueToolTip("' + id + '", "' + name + '")');
         SetTooltipForButton(btn, name, description);
         btn.textContent = name;
-        btnParent.appendChild(btn)
+        btnParent.appendChild(btn);
         document.getElementById("autoSettings").appendChild(btnParent);
     } else if (type == 'dropdown') {
         if (trimpzSettings[id] === undefined) {
@@ -137,7 +138,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
             btn.appendChild(option);
         }
         btn.value = trimpzSettings[id].selected;
-        btnParent.appendChild(btn)
+        btnParent.appendChild(btn);
         document.getElementById("autoSettings").appendChild(btnParent);
     }
 }
