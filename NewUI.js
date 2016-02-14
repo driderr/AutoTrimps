@@ -11,12 +11,12 @@ createSetting('challenge', 'Challenge', 'Challenge to run on portal', 'dropdown'
 createSetting('minimumUpgradesOnHand', 'Eq Upgrades on Hand', '0 will not run maps for equipment upgrades, 4 will run maps to keep 4 available equipment upgrades that will be autopurchased eventually', 'value', 4);
 createSetting('doRunMapsForBonus', 'Map Bonus Runs', 'Enable running of maps to increase map bonus, based on difficulty of boss fight', 'boolean', true);
 createSetting('doRunMapsForEquipment', 'Loot Runs', 'Enable running of maps for loot if needed for boss fight, requires Map Bonus Runs to be on', 'boolean', true);
-createSetting('numberOfDeathsAllowedToKillBoss', 'Allowable Deaths On Boss', 'If map runs enabled, maps will run to keep you from dying this many times during boss fight(minimum of just under one)', 'value', 4);
+createSetting('numberOfDeathsAllowedToKillBoss', 'Allowable Deaths', 'If map runs enabled, maps will run to keep you from dying this many times during boss fight(minimum of just under one)', 'value', 4);
 createSetting('minimumWarpStations', 'Minimum Warpstations', 'Minimum number of warpstations on hand before buying a gigastation', 'value', 20);
 createSetting('deltaIncreaseInMinimumWarpstationsPerGigastationPurchase', 'Warpstation Delta', 'Increase the minimum number of warpstations required to purchase a gigastation by this number for each gigastation purchased', 'value', 2);
 createSetting('targetBreedTime', 'Breed Timer', 'Desired breed time in seconds for geneticist hiring and firing.', 'value', 9);
 createSetting('targetBreedTimeHysteresis', 'Breed Hysteresis', 'How many seconds over before we start firing Geneticists?', 'value', 1);
-createSetting('CheapEquipmentRatio', 'Cheap Equipment Ratio', '0.01 means buy equipment if it only costs 1% of resources, regardless of any other limits', 'value', 0.01);
+createSetting('CheapEquipmentRatio', 'Cheap Eq Ratio', '0.01 means buy equipment if it only costs 1% of resources, regardless of any other limits', 'value', 0.01);
 createSetting('CheapEqUpgradeRatio', 'Cheap Eq Upgrades Ratio', '0.2 means buy equipment upgrades if it only costs 20% of resources, regardless of any other limits', 'value', 0.2);
 createSetting('skipShieldBlock', 'Skip Shield Block', 'Will skip the shield block upgrade', 'boolean', true);
 createSetting('minBreedingSpeed', 'Min Breeding Speed', 'Open traps if breeding speed is lower than this, in trimps/second', 'value', 100);
@@ -24,6 +24,7 @@ createSetting('runBionicWonderland', 'Run Bionic W.', 'Enable to run Bionic Wond
 createSetting('shouldMaxOutToxicityHelium', 'Max Toxic Stacks', 'Max out toxicity stacks for maximum helium for bone trader during toxicity challenge', 'boolean', false);
 createSetting('zoneToStartMaxingAt', 'Max-Out Toxic Zone Start', 'Zone to begin maxing toxicity stacks for maximum helium', 'value', 50);
 saveSettings();
+updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
 
 
