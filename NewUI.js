@@ -104,8 +104,8 @@ var ranstring='';
 function autoToggle() {
     if (game.options.displayed)
         toggleSettingsMenu();
-    if (document.getElementById('graphParent').style.display === 'block')
-        document.getElementById('graphParent').style.display = 'none';
+    //if (document.getElementById('graphParent').style.display === 'block')
+    //        document.getElementById('graphParent').style.display = 'none';
     var item = document.getElementById('autoSettings');
     if (item.style.display === 'block')
         item.style.display = 'none';
