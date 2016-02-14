@@ -121,7 +121,7 @@ function autoPlusSettingsMenu() {
 }
 
 function SetTooltipForButton(btn, name, description) {
-    btn.setAttribute("onmouseover", 'game.global.lockTooltip = true;tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\");');
+    btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\");game.global.lockTooltip = true;');
     btn.setAttribute("onmouseout", 'game.global.lockTooltip = false;tooltip("hide")');
 }
 
