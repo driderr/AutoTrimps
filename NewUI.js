@@ -24,6 +24,7 @@ createSetting('minBreedingSpeed', 'Min Breeding Speed', 'Open traps if breeding 
 createSetting('runBionicWonderland', 'Run Bionic W.', 'Enable to run Bionic Wonderland as soon as it\'s available(for speed achievement)', 'boolean', false);
 createSetting('shouldMaxOutToxicityHelium', 'Max Toxic Stacks', 'Max out toxicity stacks for maximum helium for bone trader during toxicity challenge', 'boolean', false);
 createSetting('zoneToStartMaxingAt', 'Max-Out Toxic Zone Start', 'Zone to begin maxing toxicity stacks for maximum helium', 'value', 50);
+createSetting('respecPheromones', 'Respec Breeding', 'Respec Pheromones down and bring back as needed.', 'boolean', false);
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
