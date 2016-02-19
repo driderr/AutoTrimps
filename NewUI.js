@@ -27,7 +27,7 @@ createSetting('respecPheromones', 'Respec Breeding', 'Respec Pheromones down and
 createSetting('runMapsOnlyWhenNeeded', 'Better Map Runs', 'Run maps *only* when health or damage is needed. Overrides 2 Runs above. Much higher He/hr with this setting.', 'boolean', true);
 createSetting('maxAttacksToKill', 'Max Hits To Kill', 'For Better Map Runs, acquire more damage if it takes more than this many (approx.) hits to kill the boss.', 'value', 4);
 createSetting('minAttackstoDie', 'Min Hits to Die', 'For Better Map Runs, acquire more health if it takes fewer than this many (approx.) hits to die.', 'value', 30);
-createSetting('limitEquipment', 'Limit Eq Levels', 'Sets max level for equipment. Reommended off for Better Map Runs and on for Bonus/Loot Runs', 'boolean', false);
+createSetting('limitEquipment', 'Limit Eq Levels', 'Sets max level for equipment. Recommended off for Better Map Runs and on for Bonus/Loot Runs', 'boolean', false);
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
