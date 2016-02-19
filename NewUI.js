@@ -25,8 +25,8 @@ createSetting('shouldMaxOutToxicityHelium', 'Max Toxic Stacks', 'Max out toxicit
 createSetting('zoneToStartMaxingAt', 'Max-Out Toxic Zone Start', 'Zone to begin maxing toxicity stacks for maximum helium', 'value', 50);
 createSetting('respecPheromones', 'Respec Breeding', 'Respec Pheromones down and bring back as needed.', 'boolean', false);
 createSetting('runMapsOnlyWhenNeeded', 'Better Map Runs', 'Run maps *only* when health or damage is needed. Overrides 2 Runs above. Much higher He/hr with this setting.', 'boolean', true);
-createSetting('maxAttacksToKill', 'Max Hits To Kill', 'For "Better Map Runs", acquire more damage if it takes more than this many (approx.) hits to kill the boss.', 'value', 4);
-createSetting('minAttackstoDie', 'Min Hits to Die', 'For "Better Map Runs", acquire more health if it takes fewer than this many (approx.) hits to die.', 'value', 30);
+createSetting('maxAttacksToKill', 'Max Hits To Kill', 'For Better Map Runs, acquire more damage if it takes more than this many (approx.) hits to kill the boss.', 'value', 4);
+createSetting('minAttackstoDie', 'Min Hits to Die', 'For Better Map Runs, acquire more health if it takes fewer than this many (approx.) hits to die.', 'value', 30);
 createSetting('limitEquipment', 'Limit Eq Levels', 'Sets max level for equipment. Reommended off for Better Map Runs and on for Bonus/Loot Runs', 'boolean', false);
 saveSettings();
 updateValueFields();
