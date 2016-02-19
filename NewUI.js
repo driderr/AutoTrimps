@@ -7,7 +7,7 @@ if (trimpzSettings === undefined) {
 
 automationMenuInit();
 createSetting('portalAt', 'Portal Zone', 'Portal when this zone is reached', 'value', 146);
-createSetting('challenge', 'Challenge', 'Challenge to run on portal', 'dropdown', 'Nom', ['None', 'Electricity', 'Crushed', 'Nom', 'Toxicity']);
+createSetting('challenge', 'Challenge', 'Challenge to run on portal', 'dropdown', 'Nom', ['None', 'Balance', 'Electricity', 'Crushed', 'Nom', 'Toxicity']);
 createSetting('minimumUpgradesOnHand', 'Eq Upgrades on Hand', '0 will not run maps for equipment upgrades, 4 will run maps to keep 4 available equipment upgrades that will be autopurchased eventually', 'value', 4);
 createSetting('doRunMapsForBonus', 'Map Bonus Runs', 'Enable running of maps to increase map bonus, based on difficulty of boss fight. Overridden by Better Map Runs', 'boolean', false);
 createSetting('doRunMapsForEquipment', 'Loot Runs', 'Enable running of maps for loot if needed for boss fight, requires Map Bonus Runs to be on. Overridden by Better Map Runs', 'boolean', false);
