@@ -131,7 +131,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
         }
         var btn = document.createElement("select");
         btn.id = id;
-        btn.setAttribute("style", "color:black");
+        btn.setAttribute("style", "color:#333");
         btn.setAttribute("class", "settingBtn");
         SetTooltipForButton(btn, name, description);
         btn.setAttribute("onchange", 'settingChanged("' + id + '")');
