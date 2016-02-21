@@ -29,6 +29,7 @@ createSetting('maxWormholes', 'Max Wormholes', 'Maximum number of Wormholes to b
 createSetting('runMapsOnlyWhenNeeded', 'Better Map Runs', 'Run maps *only* when health or damage is needed. Overrides 2 Runs above. Much higher He/hr with this setting.', 'boolean', true);
 createSetting('maxAttacksToKill', 'Max Hits To Kill', 'For Better Map Runs, acquire more damage if it takes more than this many (approx.) hits to kill the boss.', 'value', 4);
 createSetting('minAttackstoDie', 'Min Hits to Die', 'For Better Map Runs, acquire more health if it takes fewer than this many (approx.) hits to die.', 'value', 30);
+createSetting('oneShotRatio', 'One Shot Ratio', 'For loot runs, multiply enemy health by this to determine map level of one shot enemies.  0.5 would comparatively be 2 shots per enemy.  You may want this lower than 1 if you have Relentless or Titimp', 'value', 1);
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
