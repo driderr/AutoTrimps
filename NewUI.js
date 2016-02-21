@@ -30,6 +30,7 @@ createSetting('runMapsOnlyWhenNeeded', 'Better Map Runs', 'Run maps *only* when 
 createSetting('maxAttacksToKill', 'Max Hits To Kill', 'For Better Map Runs, acquire more damage if it takes more than this many (approx.) hits to kill the boss.', 'value', 4);
 createSetting('minAttackstoDie', 'Min Hits to Die', 'For Better Map Runs, acquire more health if it takes fewer than this many (approx.) hits to die.', 'value', 30);
 createSetting('oneShotRatio', 'One Shot Ratio', 'For loot runs, multiply enemy health by this to determine map level of one shot enemies.  0.5 would comparatively be 2 shots per enemy.  You may want this lower than 1 if you have Relentless or Titimp', 'value', 1);
+createSetting('prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps.', 'dropdown', 'Off', ['Off', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
@@ -126,9 +127,14 @@ function createSetting(id, name, description, type, defaultValue, list) {
                 name: name,
                 description: description,
                 type: type,
-                selected: defaultValue,
+                value: defaultValue,
                 list: list
             };
+        } else { //update old setting
+            if (trimpzSettings[id]["selected"]) {
+                trimpzSettings[id].value = trimpzSettings[id]["selected"];
+                delete trimpzSettings[id]["selected"];
+            }
         }
         var btn = document.createElement("select");
         btn.id = id;
@@ -143,7 +149,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
             option.text = list[item];
             btn.appendChild(option);
         }
-        btn.value = trimpzSettings[id].selected;
+        btn.value = trimpzSettings[id].value;
         btnParent.appendChild(btn);
         document.getElementById("autoSettings").appendChild(btnParent);
     }
@@ -156,7 +162,7 @@ function settingChanged(id) {
         updateCustomButtons();
     }
     if (trimpzSettings[id].type == 'dropdown') {
-        trimpzSettings[id].selected = document.getElementById(id).value;
+        trimpzSettings[id].value = document.getElementById(id).value;
     }
     saveSettings();
 }
