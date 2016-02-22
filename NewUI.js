@@ -31,6 +31,7 @@ createSetting('maxAttacksToKill', 'Max Hits To Kill', 'For Better Map Runs, acqu
 createSetting('minAttackstoDie', 'Min Hits to Die', 'For Better Map Runs, acquire more health if it takes fewer than this many (approx.) hits to die.', 'value', 30);
 createSetting('oneShotRatio', 'One Shot Ratio', 'For loot runs, multiply enemy health by this to determine map level of one shot enemies.  0.5 would comparatively be 2 shots per enemy.  You may want this lower than 1 if you have Relentless or Titimp', 'value', 1);
 createSetting('prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps.', 'dropdown', 'Off', ['Off', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
+createSetting('voidLevel', 'Void Level', 'The level/zone to run void maps at. 0 is off', 'value', '0');
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
