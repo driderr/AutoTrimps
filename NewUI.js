@@ -58,11 +58,12 @@ function automationMenuInit() {
     //create the space to place the automation settings.
     document.getElementById("settingsRow").innerHTML += '<div id="autoSettings" style="display: none;margin-bottom: 2vw;margin-top: 2vw;"></div>';
 }
+    document.getElementById('portalTimer').setAttribute('style', 'cursor: default');
 
 var ranstring='';
 var enteringValue = false;
 
-//toggles the display of the settings menu.
+    //toggles the display of the settings menu.
 function autoToggle() {
     if (game.options.displayed)
         toggleSettingsMenu();
@@ -74,7 +75,7 @@ function autoToggle() {
     else item.style.display = 'block';
 }
 
-//overloads the settings menu button to include hiding the auto menu settings.
+    //overloads the settings menu button to include hiding the auto menu settings.
 function autoPlusSettingsMenu() {
     var item = document.getElementById('autoSettings');
     if (item.style.display === 'block')
@@ -138,7 +139,7 @@ function createSetting(id, name, description, type, defaultValue, list) {
             if (trimpzSettings[id]["selected"]) {
                 trimpzSettings[id].value = trimpzSettings[id]["selected"];
                 delete trimpzSettings[id]["selected"];
-            }
+        }
         }
         var btn = document.createElement("select");
         btn.id = id;
@@ -248,7 +249,7 @@ function updateValueFields() {
 
 function updateCustomButtons() {
     //Example updates I may need with Trimpz settings:
-
+    
     //custom auto portal value
     //if (trimpzSettings.AutoPortal.selected == "Custom") document.getElementById("CustomAutoPortal").style.display = '';
     //else document.getElementById("CustomAutoPortal").style.display = 'none';
