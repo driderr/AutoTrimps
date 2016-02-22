@@ -55,11 +55,10 @@ function automationMenuInit() {
     var settingbarRow = document.getElementById("settingsTable").firstElementChild.firstElementChild;
     settingbarRow.insertBefore(newItem, settingbarRow.childNodes[10]);
 
-    //create the space to place the automation settings.
-    document.getElementById("settingsRow").innerHTML += '<div id="autoSettings" style="display: none;margin-bottom: 2vw;margin-top: 2vw;"></div>';
-}
-    document.getElementById('portalTimer').setAttribute('style', 'cursor: default');
 
+     //make timer click toggle paused mode
+    document.getElementById('portalTimer').setAttribute('onclick', 'toggleSetting(\'pauseGame\')');
+    document.getElementById('portalTimer').setAttribute('style', 'cursor: default');
 var ranstring='';
 var enteringValue = false;
 
@@ -86,6 +85,7 @@ function autoPlusSettingsMenu() {
 function SetTooltipForButton(btn, name, description) {
     btn.setAttribute("onmouseover", 'tooltip(\"' + name + '\", \"customText\", event, \"' + description + '\");game.global.lockTooltip = true;');
     btn.setAttribute("onmouseout", 'if(!enteringValue) game.global.lockTooltip = false; tooltip("hide")');
+
 }
 
 function createSetting(id, name, description, type, defaultValue, list) {
