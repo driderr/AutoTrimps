@@ -33,6 +33,7 @@ createSetting('oneShotRatio', 'One Shot Ratio', 'For loot runs, multiply enemy h
 createSetting('prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps.', 'dropdown', 'Off', ['Off', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
 createSetting('voidLevel', 'Void Level', 'The level/zone to run void maps at. 0 is off', 'value', '0');
 createSetting('onlyVoidLevel', 'Only at Void Level', 'Should only run Void Maps at the Void Level? Disable to run Void Maps obtained after Void Level.', 'boolean', true);
+createSetting('farmForVoid', 'Farm for Void', 'Should farm for damage and health before running Void Maps? Better Maps or Loot Runs are required.', 'boolean', false);
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
