@@ -15,7 +15,7 @@ createSetting('numberOfDeathsAllowedToKillBoss', 'Allowable Deaths', 'If map run
 createSetting('minimumWarpStations', 'Min Warpstations', 'Minimum number of warpstations on hand before buying a gigastation', 'value', 20);
 createSetting('deltaIncreaseInMinimumWarpstationsPerGigastationPurchase', 'Warpstation Delta', 'Increase the minimum number of warpstations required to purchase a gigastation by this number for each gigastation purchased', 'value', 2);
 createSetting('targetBreedTime', 'Breed Timer', 'Desired breed time in seconds for geneticist hiring and firing. Set this to 0 if you do not have Anticipation', 'value', 9);
-createSetting('targetBreedTimeHysteresis', 'Breed Hysteresis', 'How many seconds over before we start firing Geneticists?', 'value', 1);
+createSetting('targetBreedTimeHysteresis', 'Breed Hysteresis', 'How many seconds over before we start firing Geneticists? This must be greater than 0 (not 0).', 'value', 1);
 createSetting('CheapEquipmentRatio', 'Cheap Eq Ratio', '0.01 means buy equipment if it only costs 1% of resources, regardless of any other limits', 'value', 0.01);
 createSetting('CheapEqUpgradeRatio', 'Cheap Eq Upgrades Ratio', '0.2 means buy equipment upgrades if it only costs 20% of resources, regardless of any other limits', 'value', 0.2);
 createSetting('skipShieldBlock', 'Skip Shield Block', 'Will skip the shield block upgrade', 'boolean', true);
