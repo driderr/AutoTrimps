@@ -56,9 +56,10 @@ function automationMenuInit() {
     settingbarRow.insertBefore(newItem, settingbarRow.childNodes[10]);
 
 
-     //make timer click toggle paused mode
+    //make timer click toggle paused mode
     document.getElementById('portalTimer').setAttribute('onclick', 'toggleSetting(\'pauseGame\')');
     document.getElementById('portalTimer').setAttribute('style', 'cursor: default');
+}
 var ranstring='';
 var enteringValue = false;
 
