@@ -40,6 +40,7 @@ createSetting('AutoHeirlooms', 'ATs Heirlooms', 'AT: Automatically evaluate and 
 createSetting('ignoreBreedForNurseries', 'Fast Nurseries', 'This will cause nursery building to ignore breed timer settings and buy nurseries as enough resources are available.  Affects Potency as well.', 'boolean', false);
 createSetting('gsForEqWs', 'GS for EQ/WS ratio', 'Minimum owned Gigastations before ratio of Best Equipment to Warpstation cost is used to buy Warpstations. Default value of 1000 essentially turns this off.', 'value', 1000);
 createSetting('eqWsRatio', 'EQ/WS ratio', 'Best Equipment to Warpstation cost ratio for buying Warpstations.  Default value of 5 means no Warpstations will be bought until the Best Equipment improvement costs more than 5 times the Warpstation cost.', 'value', 5);
+createSetting('scryerMaps', 'Scryer for Loot', 'Use Scryer stance for extra loot in non-void maps.', 'boolean', false);
 saveSettings();
 updateValueFields();
 //createSetting('Prestige', 'Prestige', 'Acquire prestiges through the selected item (inclusive) as soon as they are available in maps. Forces equip first mode. Automap must be enabled.', 'dropdown', 'Off', ['Off', 'Supershield', 'Dagadder', 'Bootboost', 'Megamace', 'Hellishmet', 'Polierarm', 'Pantastic', 'Axeidic', 'Smoldershoulder', 'Greatersword', 'Bestplate', 'Harmbalest', 'GambesOP']);
